@@ -1,0 +1,29 @@
+/*
+Theme Name: Roots Starte Theme
+Author: Cody Gacek
+Author URI: http:foerstel.com
+Description: A bare bones starter theme for WordPress Websites
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: roots
+*/
+
+.fluid-container {
+	width: 100%;
+	max-width: 1140px;
+}
+
+.content p, .content ul {
+	margin-bottom: 1.5rem;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+	margin-bottom: 1.5rem;
+} 
+
+@media screen and (min-width: 767px) {
+	.menuToggle {
+		display: none;
+	}
+}
