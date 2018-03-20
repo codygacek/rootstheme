@@ -6,7 +6,7 @@
 				<div class="flex flex-wrap">
 					<div class="w-full sm:w-3/4 px-4 py-8">
 						<?php while( have_posts() ) : the_post(); ?>
-							<article class="p-4">
+							<article class="py-4">
 								<h2 class="text-2xl"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 								<p><?php the_excerpt(); ?></p>

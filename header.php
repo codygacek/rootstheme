@@ -11,7 +11,7 @@
 <body <?php body_class('leading-normal'); ?>>
 
 
-<header data-topbar class="site-header px-6 py-4">
+<header data-topbar class="site-header">
 	<div class="main-navigation-overlay"></div>
 
 	<a class="menuToggle" href="#">
@@ -23,21 +23,23 @@
 		</svg>
 	</a>
 	
-	<div class="flex flex-wrap">
-		<div class="flex w-full sm:w-full md:w-1/3">
-			<div class="site-branding">
-				<?php if(is_front_page()) : ?>
-					<h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php bloginfo('site_title'); ?></a></h1>
-					<a href="<?php echo site_url(); ?>"><img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/site-logo.png" alt=""></a>
-				<?php else : ?>
-					<h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php bloginfo('site_title'); ?></a></h1>
-					<a href="<?php echo site_url(); ?>"><img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/site-logo.png" alt=""></a>
-				<?php endif; ?>
+	<div class="fluid-container mx-auto">
+		<div class="flex flex-wrap">
+			<div class="flex w-full sm:w-full md:w-1/3 p-4">
+				<div class="site-branding">
+					<?php if(is_front_page()) : ?>
+						<h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php bloginfo('site_title'); ?></a></h1>
+						<a href="<?php echo site_url(); ?>"><img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/site-logo.png" alt=""></a>
+					<?php else : ?>
+						<h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php bloginfo('site_title'); ?></a></h1>
+						<a href="<?php echo site_url(); ?>"><img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/site-logo.png" alt=""></a>
+					<?php endif; ?>
+				</div>
 			</div>
-		</div>
 
-		<div class="flex w-full sm:w-full md:w-2/3 sm:text-right">
-			<?php wp_nav_menu( [ 'theme_location' => 'main-menu', 'container_class' => 'main-menu-container', 'menu_class' => 'main-menu'] ); ?>
+			<div class="flex w-full sm:w-full md:w-2/3 sm:text-right">
+				<?php wp_nav_menu( [ 'theme_location' => 'main-menu', 'container_class' => 'main-menu-container', 'menu_class' => 'main-menu'] ); ?>
+			</div>
 		</div>
 	</div>
 </header>

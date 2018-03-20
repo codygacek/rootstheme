@@ -9,6 +9,29 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: roots
 */
 
+/* *******************
+	WORDPRESS SPECIFIC
+******************* */
+
+.alignleft {
+	float: left;
+	margin: 2rem 2rem 2rem 0;
+}
+
+.alignright {
+	float: right;
+	margin: 2rem 0 2rem 2rem;
+}
+
+.aligncenter {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* *******************
+	GENERAL LAYOUT
+******************* */
+
 .fluid-container {
 	width: 100%;
 	max-width: 1140px;
@@ -20,10 +43,168 @@ Text Domain: roots
 
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 	margin-bottom: 1.5rem;
-} 
+}
+
+/* *******************
+	HEADER
+******************* */
+
+.site-header {
+	position: relative;
+}
+
+/* *******************
+	MAIN NAVIGATION
+******************* */
+
+/* Mobile Menu Toggle */
+
+.menu-toggle {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	width: 26px;
+	height: 26px;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+
+.menu-toggle path {
+	fill: #606F7B;
+	transition: .2s linear;
+}
+
+.menu-toggle:hover path {
+	fill: #22292F;
+}
+
+@media screen and (max-width: 767px) {
+	.main-menu-container {
+		opacity: 0;
+		visibility: hidden;
+		display: flex;
+		background-color: rgba(0,0,0,0.85);
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+		transition: .2s linear;
+	}
+
+	.menu-open .main-menu-container {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.main-menu {
+		margin: auto;
+		text-align: center;
+	}
+
+	.main-menu li {
+		display: block;
+	}
+
+	.main-menu > li > a {
+		font-weight: bold;
+		font-size: 1.3rem;
+
+	}
+
+	.main-menu .sub-menu {
+		background-color: inherit;
+		opacity: 1;
+		visibility: visible;
+		position: initial;
+		transform: none;
+	}
+
+	.main-menu .sub-menu li a {
+		font-size: 1.1rem;
+		color: #dadada;
+	}
+
+	.main-menu .sub-menu li a:hover {
+		color: #ffffff;
+	}
+
+	.main-menu li:hover .sub-menu {
+		transform: none;
+	}
+}
+
+/* *******************
+	Media Query Tablet & Above
+******************* */
 
 @media screen and (min-width: 767px) {
-	.menuToggle {
+
+	.menu-toggle {
 		display: none;
+	}
+
+	/* Main Menu */
+
+	.main-menu-container {
+		display: block;
+		width: 100%;
+		margin: auto 0;
+	}
+
+	.main-menu {
+		padding: 0;
+	}
+
+	.main-menu li {
+		position: relative;
+		display: inline-block;
+	}
+
+	.main-menu li a {
+		text-decoration: none;
+	}
+
+	.main-menu > li > a {
+		display: block;
+		padding: .5rem 1rem;
+	}
+
+	.main-menu li a:hover {
+		color: goldenrod;
+	}
+
+	.main-menu .sub-menu {
+		opacity: 0;
+		visibility: hidden;
+		background-color: #ffffff;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		padding: 0;
+		min-width: 10rem;
+		transform: translateX(-50%) translateY(0);
+		-webkit-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	  	transition:         all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	.main-menu li:hover .sub-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(-50%) translateY(-5px);
+	}
+
+	.main-menu .sub-menu li {
+		width: 100%;
+	}
+
+	.main-menu .sub-menu li a {
+		display: block;
+		padding: .375rem 1.5rem;
+		color: #444;
+		text-align: center;
 	}
 }
