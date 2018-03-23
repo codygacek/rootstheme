@@ -13,7 +13,7 @@
 	 */
 	function roots_scripts() {
 		wp_enqueue_style( 'tailwind', get_template_directory_uri().'/assets/css/tailwind.css' );
-		wp_enqueue_style( 'app', get_template_uri() );
+		wp_enqueue_style( 'app', get_template_directory_uri() );
 
 		wp_enqueue_script( 'font-awesome', get_theme_file_uri( '/assets/js/fontawesome-all.js' ), array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'app', get_theme_file_uri( '/assets/js/app.js' ), array( 'jquery' ), '1.0', true );
