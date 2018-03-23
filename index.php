@@ -9,9 +9,9 @@
 							<article class="py-4">
 								<h2 class="text-2xl"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
+								<span class="article-date" data-time="<?php echo get_the_date('Y-m-d h:m:s'); ?>"> <i class="far fa-clock" aria-hidden="true"></i> <?php echo get_the_date('M d, Y'); ?></span>
+
 								<p><?php the_excerpt(); ?></p>
-								
-								<span class="article-date" data-time="<?php echo get_the_date('Y-m-d h:m:s'); ?>"> <i class="fa fa-clock-o" aria-hidden="true"></i> <?php the_date('M d, Y'); ?></span>
 							</article>
 						<?php endwhile; ?>
 					</div>
